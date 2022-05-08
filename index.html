@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cube Club</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <div class="empty_space"></div>
+                <div id="logo">
+                    <h1><a href="index.html">Cube Club</a></h1>
+                </div>
+                <nav id="top">
+                    <ul id="main_menu">   
+                        <div class="empty_space"></div>
+                        <li><a href="about.html">About</a>
+                            <ul class="sub_menu">
+                                <li><a href="about.html">サイト紹介</a></li>
+                                <li><a href="contact.html">お問い合わせ</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="site.html">各種情報</a>
+                            <ul class="sub_menu">
+                                <li><a href="site.html">サイト関連</a></li>
+                                <li><a href="event.html">イベント</a></li>
+                                <li><a href="community.html">コミュニティ</a></li>
+                                <li><a href="method.html">キューブ解法</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="login.html">ログイン</a>
+                            <ul class="sub_menu">
+                                <li><a href="login.html">ログイン</a></li>
+                                <li><a href="registration.html">新規登録</a></li>
+                            </ul>
+                        </li>
+                        <div class="empty_space"></div>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div id="left_space"></div>
+                <div id="main_space">
+                    <div id="main_image">
+                        <img src="images/cube.jpg" alt="main image">
+                    </div>
+                    <div id="calendar">
+                        <script>
+                            let today = new Date();
+                            let today_year = today.getFullYear();
+                            let today_month = today.getMonth() + 1;
+                            let today_date = today.getDate();
+
+                            function finalday_of_Month(year, month) {
+                                return 32 - new Date(year, month - 1, 32).getDate();
+                            }
+
+                            function day_of_week(yyyy, MM, dd) {
+                                return new Date(yyyy, MM - 1, dd).getDay();
+                            }
+
+                            function make_calendar(yyyy, MM) {
+                                document.write("<table>");
+
+                                let year_month = yyyy + "年 " + MM + "月";
+                                document.write("<caption>" + year_month + "</caption>");
+
+                                let day = ["日", "月", "火", "水", "木", "金", "土"]
+                                document.write("<tr>");
+                                for (var i = 0; i <= 6; i++) {
+                                    document.write("<th id=\"day_of_the_week\">" + day[i] + "</th>");
+                                }
+                                document.write("</tr>");
+                                
+                                let count = 0;
+
+                                document.write("<tr>");
+                                if (day_of_week(yyyy, MM, 1) != 0) {
+                                    for (var j = 1; j <= day_of_week(yyyy, MM, 1); j++) {
+                                        document.write("<td></td>")
+                                        count++;
+                                    }
+                                }
+                                
+                                let length = count + finalday_of_Month(yyyy, MM);
+
+                                for (var dd = 1; dd <= finalday_of_Month(yyyy, MM); dd++) {
+                                    document.write("<td id=\"")
+
+                                    if (day_of_week(yyyy, MM, dd) == 0) {
+                                        if (0 <= length && length <= 28) {
+                                            document.write("sunday_4week");
+                                        } else if (28 < length && length <= 35) {
+                                            document.write("sunday_5week");
+                                        } else if (35 < length) {
+                                            document.write("sunday_6week");
+                                        }
+                                    } else if (day_of_week(yyyy, MM, dd) == 6) {
+                                        if (0 <= length && length <= 28) {
+                                            document.write("saturday_4week");
+                                        } else if (28 < length && length <= 35) {
+                                            document.write("saturday_5week");
+                                        } else if (35 < length) {
+                                            document.write("saturday_6week");
+                                        }
+                                    } else {
+                                        if (0 <= length && length <= 28) {
+                                            document.write("weekday_4week");
+                                        } else if (28 < length && length <= 35) {
+                                            document.write("weekday_5week");
+                                        } else if (35 < length) {
+                                            document.write("weekday_6week");
+                                        }
+                                    }
+
+                                    document.write("\">");
+                                    if (dd == today_date) {
+                                        if (day_of_week(yyyy, MM, dd) == 0) {
+                                            document.write("<span style=\"color: red; font-weight: 900;\">" + dd + "</span>");
+                                        } else if (day_of_week(yyyy, MM, dd) == 6) {
+                                            document.write("<span style=\"color: blue; font-weight: 900;\">" + dd + "</span>");
+                                        } else {
+                                            document.write("<span style=\"color: black; font-weight: 900;\">" + dd + "</span>");
+                                        }
+                                        
+                                    } else {
+                                        document.write(dd);
+                                    }
+                                    document.write("<br></td>");
+
+                                    if (day_of_week(yyyy, MM, dd) == 6 || dd == finalday_of_Month(yyyy, MM, dd)) {
+                                        document.write("</tr>");
+                                    }
+                                }
+                                document.write("</table>");
+                            }
+
+                            make_calendar(today_year, today_month);
+
+                        </script>
+                    </div>
+                    <div id="news">
+                        <div id="title">
+                            <h6>News</h6>
+                        </div>
+                        <div id="new_information">
+                            <ul>
+                                <li><a href="article_1.html"><strong>(必読)</strong>Cube ClubのWebサイトを新しく作りました！</a></li>
+                                <li><a href="method.html">新しいキューブ解法が登録されました。</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="right_space"></div>
+            </main>
+            <footer>
+                <p>Designed by Y</p>
+            </footer>
+        </div>
+        <script>
+
+        </script>
+    </body>
+</html>

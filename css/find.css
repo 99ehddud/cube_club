@@ -1,0 +1,301 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
+/* Design */
+
+body {
+    margin: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(36, 33, 36);
+}
+
+header {
+    width: 100vw;
+    height: 12vh;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+#logo {
+    float: left;
+    width: 25vw;
+    height: 12vh;
+}
+
+#logo > h1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 12vh;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Pushster', cursive;
+    font-size: 6vmin;
+}
+
+#logo > h1 > a {
+    text-decoration: none;
+    color: white;
+}
+
+#top {
+    float: left;
+    width: 60vw;
+    height: 12vh;
+}
+
+.empty_space {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 10vw;
+    height: 12vh;
+}
+
+#main_menu, .sub_menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#main_menu > li {
+    float: left;
+}
+
+#main_menu > li > a {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 15vw;
+    height: 12vh;
+    line-height: 12vh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: bold;
+    font-size: 3vmin;
+}
+
+#main_menu > li > a:hover {
+    background-color: rgb(50, 50, 50);
+    border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+#main_menu > li:hover .sub_menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+#main_menu > li > a:active, .sub_menu > li > a:active {
+    color: rgb(180, 180, 180);
+}
+
+.sub_menu {
+    position: absolute;
+    background-color: rgb(50, 50, 50);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sub_menu > li > a {
+    display: block;
+    box-sizing: border-box;
+    border-right: 1px solid rgb(90, 90, 90);
+    border-bottom: 1px solid rgb(90, 90, 90);
+    border-left: 1px solid rgb(90, 90, 90);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 15vw;
+    height: 6vh;
+    line-height: 6vh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 2vmin;
+}
+
+.sub_menu > li > a:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+main {
+    width: 100vw;
+    height: 80vh;
+}
+
+#left_space, #right_space {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 10vw;
+    height: 80vh;
+}
+
+#main_space {
+    float: left;
+    width: 80vw;
+    height: 80vh;
+}
+
+#sidebar {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 15vw;
+    height: 80vh;
+    background-color: rgb(83, 79, 79);
+}
+
+#sidebar > ul {
+    margin: 2vh 1vw;
+    padding: 0;
+    list-style-type: none;
+}
+
+#sidebar > ul >li {
+    margin-bottom: 1vh;
+}
+
+#sidebar > ul > li > a {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 13vw;
+    height: 5vh;
+    line-height: 5vh;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 2vmin;
+}
+
+#sidebar > ul > li > a[title ~= current] {
+    background-color: rgb(120, 120, 120);
+}
+
+#sidebar > ul > li > a:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+#sidebar > ul > li > a:active {
+    color: rgb(180, 180, 180);
+}
+
+#box {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 65vw;
+    height: 80vh;
+    background-color: rgb(219, 204, 191);
+}
+
+#UD_space {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    width: 65vw;
+    height: 26vh;
+}
+
+#LR_space {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 17.5vw;
+    height: 28vh;
+}
+
+#center {
+    float: left;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 5vh 3.5vw;
+    width: 30vw;
+    height: 28vh;
+    text-align: center;
+    border-radius: 20px;
+    background-color: seashell;
+}
+
+#center > input {
+    margin: 0;
+    box-sizing: border-box;
+    width: 23vw;
+    height: 4.5vh;
+    line-height: 4.5vh;
+    vertical-align: middle;
+    font-size: 2vmin;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    border-radius: 5px;
+}
+
+#center > input[type="text"] {
+    padding-left: 1vw;
+    border: 0.5px solid rgb(200, 200, 200);    
+}
+
+#center > input[type="text"]:focus {
+    outline: 1px solid rgb(32, 180, 248);
+    box-shadow: 0 0 10px 1px rgb(32, 170, 248);
+}
+
+#center > input[type="button"] {
+    margin: 2.25vh 0;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: rgb(52, 108, 240);
+}
+
+#center > input[type="button"]:hover {
+    cursor: pointer;
+}
+
+#center > input[type="button"]:active {
+    color: rgb(180, 180, 180);
+    background-color: rgb(29, 68, 173);
+}
+
+#center > p {
+    margin: 0;
+    padding: 0;
+    width: 23vw;
+    height: 4.5vh;
+    font-size: 2vmin;
+    text-align: center;
+    line-height: 4.5vh;
+    vertical-align: middle;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+#center > p > a {
+    text-decoration: none;
+    color: rgb(38, 92, 249);
+}
+
+#center > p > a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    clear: both;
+    width: 100vw;
+    height: 8vh;
+    box-sizing: border-box;
+    border-top: 1px solid rgb(109, 109, 109);
+}
+
+footer > p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-weight: lighter;
+    color: white;
+    font-size: 1.5vmin;
+}
